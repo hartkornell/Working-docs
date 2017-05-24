@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Objective}{5}
+\contentsline {section}{\numberline {2}Scientific Goal}{6}
+\contentsline {section}{\numberline {3}Assumptions}{7}
+\contentsline {subsection}{\numberline {3.1}Tiresome but necessary epistemology; or, why self-skepticism is rarely misplaced}{7}
+\contentsline {subsection}{\numberline {3.2}Four kinds of assumptions}{7}
+\contentsline {subsection}{\numberline {3.3}Implicit and foundation assumptions}{7}
+\contentsline {subsection}{\numberline {3.4}Prior knowledge and specific assumptions}{9}
+\contentsline {subsection}{\numberline {3.5}MINOS-specific assumptions}{10}
+\contentsline {subsection}{\numberline {3.6}Assumptions about method}{10}
+\contentsline {subsection}{\numberline {3.7}Assumptions we're not making}{11}
+\contentsline {subsection}{\numberline {3.8}Central assumption}{12}
+\contentsline {section}{\numberline {4}Scope}{13}
+\contentsline {subsection}{\numberline {4.1}Focus}{13}
+\contentsline {subsection}{\numberline {4.2}Data}{13}
+\contentsline {subsection}{\numberline {4.3}Excluded from scope}{14}
+\contentsline {subsection}{\numberline {4.4}Generalization}{14}
+\contentsline {section}{\numberline {5}Ethics }{15}

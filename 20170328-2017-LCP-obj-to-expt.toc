@@ -1,0 +1,63 @@
+\contentsline {section}{\numberline {1}Objective}{6}
+\contentsline {section}{\numberline {2}Scientific Goal}{7}
+\contentsline {section}{\numberline {3}Assumptions}{8}
+\contentsline {subsection}{\numberline {3.1}Tiresome but necessary epistemology; or, why self-skepticism is rarely misplaced}{8}
+\contentsline {subsection}{\numberline {3.2}Four kinds of assumptions}{8}
+\contentsline {subsection}{\numberline {3.3}Implicit and foundation assumptions}{8}
+\contentsline {subsection}{\numberline {3.4}Prior knowledge and specific assumptions}{10}
+\contentsline {subsection}{\numberline {3.5}MINOS-specific assumptions}{11}
+\contentsline {subsection}{\numberline {3.6}Assumptions about method}{11}
+\contentsline {subsection}{\numberline {3.7}Assumptions we're not making}{12}
+\contentsline {subsection}{\numberline {3.8}Central assumption}{13}
+\contentsline {section}{\numberline {4}Scope}{14}
+\contentsline {subsection}{\numberline {4.1}Focus}{14}
+\contentsline {subsection}{\numberline {4.2}Data}{14}
+\contentsline {subsection}{\numberline {4.3}Excluded from scope}{15}
+\contentsline {subsection}{\numberline {4.4}Generalization}{15}
+\contentsline {section}{\numberline {5}Ethics }{16}
+\contentsline {section}{\numberline {6}Hypotheses}{17}
+\contentsline {subsection}{\numberline {6.1}Hypothesis structure}{17}
+\contentsline {subsection}{\numberline {6.2}Two useful distinctions}{17}
+\contentsline {subsection}{\numberline {6.3}Reciprocal influence}{19}
+\contentsline {subsubsection}{\numberline {6.3.1}Specific mission relevance}{19}
+\contentsline {subsubsection}{\numberline {6.3.2}Hypothesis}{19}
+\contentsline {subsubsection}{\numberline {6.3.3}Confirming evidence}{19}
+\contentsline {subsubsection}{\numberline {6.3.4}Disconfirming evidence}{19}
+\contentsline {subsubsection}{\numberline {6.3.5}Null/control case}{20}
+\contentsline {subsection}{\numberline {6.4}Multi-network modeling and analysis at a nuclear facility}{21}
+\contentsline {subsubsection}{\numberline {6.4.1}Specific mission relevance}{21}
+\contentsline {subsubsection}{\numberline {6.4.2}Hypothesis}{21}
+\contentsline {subsubsection}{\numberline {6.4.3}Confirming evidence}{21}
+\contentsline {subsubsection}{\numberline {6.4.4}Disconfirming evidence}{21}
+\contentsline {subsubsection}{\numberline {6.4.5}Null/control case}{22}
+\contentsline {subsection}{\numberline {6.5}Heterogeneous data in a unified framework}{23}
+\contentsline {subsubsection}{\numberline {6.5.1}Specific mission relevance}{23}
+\contentsline {subsubsection}{\numberline {6.5.2}Hypothesis}{23}
+\contentsline {subsubsection}{\numberline {6.5.3}Confirming evidence}{23}
+\contentsline {subsubsection}{\numberline {6.5.4}Disconfirming evidence}{24}
+\contentsline {subsubsection}{\numberline {6.5.5}Null/control case}{24}
+\contentsline {subsection}{\numberline {6.6}Mixed live and simulated data}{25}
+\contentsline {subsubsection}{\numberline {6.6.1}Specific mission relevance}{25}
+\contentsline {subsubsection}{\numberline {6.6.2}Hypothesis}{25}
+\contentsline {subsubsection}{\numberline {6.6.3}Confirming evidence}{25}
+\contentsline {subsubsection}{\numberline {6.6.4}Disconfirming evidence}{25}
+\contentsline {subsubsection}{\numberline {6.6.5}Null/control case}{26}
+\contentsline {subsection}{\numberline {6.7}Networks with expectations}{27}
+\contentsline {subsubsection}{\numberline {6.7.1}Specific mission relevance}{27}
+\contentsline {subsubsection}{\numberline {6.7.2}Hypothesis}{27}
+\contentsline {subsubsection}{\numberline {6.7.3}Confirming evidence}{27}
+\contentsline {subsubsection}{\numberline {6.7.4}Disconfirming evidence}{27}
+\contentsline {subsubsection}{\numberline {6.7.5}Null/control case}{28}
+\contentsline {subsection}{\numberline {6.8}Quantifying sensor ensemble coverage}{29}
+\contentsline {subsubsection}{\numberline {6.8.1}Specific mission relevance}{29}
+\contentsline {subsubsection}{\numberline {6.8.2}Hypothesis}{29}
+\contentsline {subsubsection}{\numberline {6.8.3}Confirming evidence}{29}
+\contentsline {subsubsection}{\numberline {6.8.4}Disconfirming evidence}{29}
+\contentsline {subsubsection}{\numberline {6.8.5}Null/control case}{29}
+\contentsline {section}{\numberline {7}Experiment plan}{30}
+\contentsline {subsection}{\numberline {7.1}Reciprocal influence}{30}
+\contentsline {subsection}{\numberline {7.2}Multi-network modeling and analysis at a nuclear facility}{30}
+\contentsline {subsection}{\numberline {7.3}Heterogeneous data in a unified framework}{31}
+\contentsline {subsection}{\numberline {7.4}Mixed live and simulated data}{33}
+\contentsline {subsection}{\numberline {7.5}Networks with expectations}{33}
+\contentsline {subsection}{\numberline {7.6}Quantifying sensor ensemble coverage}{34}

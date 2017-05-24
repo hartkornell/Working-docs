@@ -1,0 +1,613 @@
+\documentclass{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage{fixltx2e}
+\usepackage{mdwlist}
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper, margin=1.8 in} % or a4paper (Britain) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{xcolor}
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customizable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}
+%\usepackage[inline]{enumitem}
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% WIDOWS & ORPHANS
+\widowpenalty=10000
+\clubpenalty=10000
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+\title{Interdependent Networks\\LCP (Hypotheses \& Experiment Plan)}
+\author{Hart Kornell\\ Special Technologies Lab\\National Security Technologies, LLC\\
+---\\
+Bethany L. Goldblum, UC Berkeley\\
+Zoe N. Gastelum, Sandia National Laboratories}
+\date{28 March 2017} 
+
+
+\begin{document}
+\maketitle
+
+\vfill
+\begin{center}
+US Department of Energy NNSA \\
+\textbf{Defense Nuclear Nonproliferation R\&D} \\
+WebPMIS: FY17-NST-PD3SS-WP368  \\
+PI: J. Hart Kornell, NSTec, 805.452.8660, korneljm@nv.doe.gov \\
+Co-PI: Zoe Gastelum, Sandia National Lab, 505.845.1002, zgastel@sandia.gov \\
+Co-PI: Bethany L. Goldblum, UC Berkeley, bethany@nuc.berkeley.edu \\
+HQ: James Peltz, 202.586.7564, james.peltz@nnsa.doe.gov \\
+Funding start: 01 October 2016; Funding end: 30 September 2019
+\end{center}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\newpage
+
+\onehalfspace
+
+\tableofcontents{}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\section{Objective}
+The objectives of Interdependent Networks are to show:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize}
+\item Network modeling and analysis is germane to multiple problems in nonproliferation and proliferation detection; and,
+\item There are problems, particularly in understanding complex systems, where network modeling allows us to ask questions and propose hypotheses that are difficult to pose with traditional approaches.
+\end{itemize}
+The long-term objective is to make network modeling and analyses a normal part of nonproliferation research and practice.\\
+\\
+\noindent The last century's research in nonproliferation and proliferation detection focused on a few elemental isotopes. These are inexpensive to hide, and to a great extent those trying to hide proliferation activities can be effective because they have a good sense of how we're looking. We need to turn our attention to nonlocal, irreducible phenomena. An ant colony can respond to predators, but no individual ant has any such capacity. There is no single spot at which the response happens; it is nonlocal. Nor can the whole be derived or predicted from the parts; it is irreducible. The same is true of our minds' emergence from the neurons and glia of our brains. There are countless examples.  
+
+To incorporate this complexity, this century's proliferation detection and safeguards will require integrating different mechanisms, scales, and dynamics. The scientific community has practiced reductionism for four hundred years with extraordinary success. We've lacked the tools to look the other direction, at how complex behavior emerges from the interactions of lower-level parts. We now have tools to examine non-local irreducibly emergent properties with the same rigor with which we decompose systems to atomic parts. Network modeling and analyses are one source of those tools, and an effective way to apply them.
+
+If the future of proliferation detection includes non-local, irreducible, emergent phenomena, we need to be building the networks and algorithms that will allow us to discover and then detect the patterns of patterns that  reveal proliferation. Longo, Monevil, and Kauffmann argue that there are no laws entailing the evolution of the biosphere.\footnote{They do not claim there are no constraints, as physics and chemistry obviously are.} If that extraordinary claim is true, or even partially true, empirically-derived networks are intrinsic to our mission.
+
+\pagebreak
+\section{Scientific Goal}
+The scientific goal is to model and analyze heterogeneous nonproliferation-relevant data in an iteratively improvable way. 
+
+There are two derived goals: (i) mapping the range, reliability, and pitfalls of integrating data with widely varying resolutions, error rates, time scales, provenance, and correlations to phenomena; and, (ii) developing methods and techniques that can be generalized to broad families of similar problems.
+
+Said differently, the main goal is to show we can integrate really different kinds of data to understand complex things, in way that is scrutable, `deconstruct-able,' and improvable. The first of the derived goals is to look at the strengths and limits of the approaches we?ll discover and map them (as best we can). This is needed by the second derived goal, which is to understand and report which parts of the method(s) we will develop are generalizable and transferrable, and which are less likely to be.
+
+In order, we present our assumptions, scope, hypotheses, and experiment plans. The hypotheses are of multiple types and are hierarchical. They depend on the assumptions and the derived scope.
+
+\pagebreak
+\section{Assumptions}
+\subsection{Tiresome but necessary epistemology; or, why self-skepticism is rarely misplaced}
+We deal with observations. Observations are representations of something going on. Some are close enough to the thing of interest we label them `ground truth.' Some are much further. Observations are inextricably entangled with interpretations. First, what we choose to observe comes from what  we're interested in, which is intrinsically an interpretation (`these features rather than those.') Second, they drive interpretations, what we say the observation means. Interpretations also set which parts of the observed are ignored or not even seen. 
+
+See handy diagram.
+
+Selecting and filtering is a necessary part of human cognition. If we didn't we'd be overwhelmed. Because we don't know what we're doing, we want to be accountable for both our conscious and our unconscious entanglements. This is why we articulate our assumptions as clearly as possible. It's a way to make public what we (think we) already know before we start asking questions about what is true. Unexamined assumptions are the first place errors seep into programs. They can wash away foundations.
+
+\subsection{Four kinds of assumptions}
+Interdependent Networks assumptions are of four kinds. The first is the implicit `starting-from' assumptions, general knowledge that is too obvious to need examination. The second concerns prior knowledge, about what we (think we) know at the start in a particular subject area. The third is about the kinds, persistence, and access to physical and informational sensing. The fourth is about methods.
+
+\subsection{Implicit and foundation assumptions}
+We assume relationships are central. 
+
+As with any complex network characterized by its emergent qualities, e.g., neuroscience, bee hives, \&c., the `things' are less interesting than the emergent properties, which are relationships and dynamical processes. We're strongly biased toward thinking in things (nouns) because it is cognitively easier. Nouns scale linearly, while relationships scale exponentially. One thing, two things, ten things: for the same numbers, relationship counts are 0, 1, and 90. Asymmetric network links (source/sink, emit/absorb) scale as $n(n-1)$. It's cognitively easier to keep five or six things in mind at once than 20 or 30 relationships. You can add one more thing to the list without the whole thing going unstable. So: we assume making relationships  primary will be difficult and error-prone, and harder to explain to colleagues.
+
+We assume the constraints associated with the environment will allow us to infer semantics. If we see a turtle on a tree stump, the constraints of turtle locomotion allow us to infer human agency. Or an eagle with a twisted sense of humor.
+
+We assume clearly representing relationships and their dynamics will lead to insights.
+
+We assume data and interpretation/analysis are fully intertwined and inseparable. Top-down and bottom-up are co-occurring and mutually influencing, and can happen at multiple levels at the same time.
+
+We assume heterogeneous data are necessary. Much (most) DNN-funded research has focused on elementary detection, that is, detection of specific isotopes of elements of the periodic table. Over the last half-decade not a single nonproliferation researcher has, when asked, not been fully confident he or she could hide the isotopes of interest in way that no technical means could find. A sensible inference is, if we can't see the direct evidence, then a mix of indirect evidence will be needed. 
+
+We assume that at least to a significant degree, transparency and back-track-ability (human-understandability) of representations is needed. In contrast, a black box that always gave the right answers but was not openable would not be acceptable at this stage of the science.
+
+We assume there are things we'll want to be able to observe without ourselves being observed. This is not a strong requirement on the work described below, but it is a fact about our mission space, and so entails plausibility when assessing what evidence should be considered. For instance, if the maximum physically-plausible stand-off distance for a sensor is 50 meters, and the minimum size, as for optics, is 50 cm, it is unlikely the technology could be used in a denied area. 
+
+We assume the distinction between physical and informational (`soft') sensing can be useful as a conceptual organizer, but is epistemologically empty. We have observations, whether more or less direct. A spectra from a SWIR imager is a image that is analyzed; a photo from social media is an image that is analyzed. We ascribe provenance and reliability by source, but these are overlapping value ranges.
+
+We assume distinguishability, that is, that we can discriminate between an honest signal and a fabricated or deceptive signal. 
+
+We assume adequate determination, that is, that we can construct reliable many-to-one correlations. For instance, a (1) hyperbolic cooling tower that is (2) emitting \textsuperscript{85}Kr has a many (sources) to one (conclusion) correspondence to nuclear activities. In contrast, a cooling tower emitting SO\textsubscript{2} could reflect nuclear activities, but as well could represent many other industrial activities, i.e., a many-to-many correspondence. 
+
+We assume (or hope) that a set of many-to-many correspondences, reconciled together, can lead to a many-to-one correspondence. 
+ 
+For example, we know (a) Berkeley was a center of core nuclear research in the days of Lawrence and Seaborg, including the invention of the cyclotron; (b) there's a Cyclotron Road on the LBNL campus, leading to a large building with locked doors; (c) the building is actively full of people too scruffy to be maintenance workers. We can infer the cyclotron is in regular operation, even though no single or pair of elements is adequate. 
+
+
+\subsection{Prior knowledge and specific assumptions}
+The assumptions below are presented in general form, but should be read at least partially in the context of the MINOS venture.
+\begin{itemize*}
+\item We assume we know what we're looking for. 
+\item We assume we can observe it, that is, make observations with in the best case a unique one-to-one correspondence to the thing being measured, and in the acceptable case a strong correlation. (For a single `thing going on,' what we can observe and what's actually going on are close together, and the correlative inference joining them is reliable. Magicians traditionally play with this inferential expectation. Experimental nuclear physics, as an example, takes advantage of this tightly-bound inferential relationship.)
+\item We assume our observations correlate with reality. 
+\item We assume we'll recognize it if we find it. This is not a trivial assumption.
+\item We assume that the causal processes we know exist within our target domains, including HFIR and REDC, are tracked within a small number of indirections by the observations we can make from outside. That is, the length of the inferential chains will not be excessive.
+\item We assume we know, or will be able to recognize, what combinations of evidence are effective. 
+\item We assume measures of overall `goodness,' distributed and variable over multiple sensors will be both derivable and generalizable. (How good does B have to be if A is \textit{x} good?)
+\item We assume object permanence (except in special cases like fuel consumption/transformation.)
+\end{itemize*}
+
+We assume that the Interdependent Networks hypotheses and experiments associated with MINOS are of interest not for specific information about the HFIR or the REDC but as demonstrations of combinations of sensing and analysis that can be applied to any interesting facility or transport network.
+
+Assuming we know what we're looking for is both necessary and an assumption we hope to find false. That is, we hope to discover previously undocumented patterns in data that increase confidence in classification of activities at facilities of interest. 
+
+\subsection{MINOS-specific assumptions}
+We assume findings and techniques developed for an aboveground facility will generalize to clandestine underground facilities. Perhaps more pointedly, we assume we're responsible to insure that findings can be generalized.
+
+Regarding access to points of observation, we assume:
+\begin{itemize*}
+\item We're not restricted to the area immediately surrounding HFIR and the RDEC.
+\item Persistent monitoring over many months is possible.
+\item Pattern of life information that does not resolve to specific individuals is acceptable
+\item We are not restricted to passive observations
+\end{itemize*}
+
+\subsection{Assumptions about method}
+\begin{itemize*}
+\item Methods, or some subset of methods, will need explicit capacity to encompass missing, incomplete, wrong, deceptive, partial, and ambiguous data. 
+\item Methods will need to allow for nonmonotonicity, that is, for things that at one stage of characterization were held to be true which later prove to be false, and similarly for things we thought wrong to emerge as true.
+\item Methods need to be defensible. If we don't understand our methods we're potentially unintentionally deceptive in generalization and transfer.
+\item Methods need to be composable. Different approaches (we assume) will be effective at different levels of sensing and analysis. The capability to compose higher-level methods out of finer-grained approaches is needed. (Whether methods are independent or correlated is of concern.) Note that, as this example of en embedded phrase illustrates, totally normal. It needs to be said because some science and techniques are not composable. Deep learning networks, for example, can be sequenced, but are not composable except at the level of products.
+\item Methods need to be potentially capable of representing path-dependence, that is, the condition where the same state may have different meanings according to how you arrived at it. 
+\end{itemize*}
+
+We believe anything we can do to lower the cost of experiments will be of potential benefit. Expensive experiments need to be conservative. Cheap experiments can explore edges. 
+
+We assume our collections and analytic focus will exclude specific agents (human actors). Human actors as a composite may be included, e.g., traffic into a building, uniformed personnel, but personally identifying information (PII) will not be collected, nor will there be effort to adduce PII from composite data. 
+
+\subsection{Assumptions we're not making}
+While we assume networks or relationships, we do not \textit{a priori} assume anything about techniques, algorithms, or methods per network or set of relationships. For instance, we don't assume statistical learning (deep learning, neural nets) is necessary; nor do we assume it's not necessary. The same is true for probabilistic (including Bayesian) and symbolic reasoning. 
+
+The assumption we're not making is consonant with our network modeling and analysis approach. in multiplex or multi-layer networks, each component network can have whatever combinatorial formalism makes sense for that specific network. 
+
+In living things, sensing and sense-making are continuous, concurrent processes that dynamically inform and direct one another. In many DNN R\&D projects, a `film photography' method predominates, \textit{viz}., set up the collection, take the data, analyze the data, set up the next collection. We do not assume either concurrent mutuality (as in biology) or serial collection. Nor do we assume these are binary and mutually exclusive choices.
+
+\subsection{Central assumption}
+Any or all of our assumptions may be mistaken.
+
+
+\pagebreak\section{Scope}
+We discuss focus, data, exclusions, and generalization.
+
+\subsection{Focus}
+We consider problems for which a specifically network-centric approach seems most apt. Network is used in two ways, pragmatically and abstractly. Pragmatically, our principle field data device, the Canary, works in networks, both homogeneous (other Canaries) and heterogeneous (various other classes of sensing and analytic devices). More abstractly and centrally, various forms of network modeling and analysis are our central scientific focus. 
+
+Focus does not mean ideology, and if in our explorations of the problem space other abstractions are sueful, we will incorporate them.
+
+\subsection{Data}
+Scope includes three types of data:
+\begin{itemize*}
+\item Historical, political, and current context
+\item Informational (`soft') sensing
+\item Physical sensing
+\end{itemize*}
+
+The HFIR and REDC facilities at Oak Ridge National Laboratory, central to MINOS, are central as well to our planning. We will also use \textit{ad hoc} and opportunistic targets for experimentation. The most notable is the 88-inch cyclotron at Lawrence Berkeley National Laboratory, which co-PI Bethany Goldblum uses for her neutron research. Because our data source for physical sensing, the Canary devices (or its simulator) is inexpensive and built for easy deployment, we can set up arbitrarily complex data collections in minutes to hours. Because we designed the Canary `defensively,' that is, to not collect PII and to not interact with networks common at NNSA Labs, we can quickly respond to opportunities at the Nevada Test Site (NNSS), Savannah River National Lab, Idaho National Lab, and elsewhere as relevant opportunities arise. Opportunities will be evaluated according to the hypotheses and the experimental plan.
+
+\subsection{Excluded from scope}
+Experiments with dynamical human-computer cooperation. This is a likely future of AI systems, and richly deserves investigation, but it is not part of the current work.
+
+\subsection{Generalization}
+Treaty verification, proliferation detection, and illicit materials tracking have different physical and informational requirements and restrictions. The experiments described above, conditioned on specific content appropriate to a mission need, will produce results potentially applicable to multiple nonproliferation and proliferation detection needs.
+
+During the course of conducting the experiments, we will (try to) be thoughtful in the design of both experiments and especially methods so we can assess and others can easily judge whether techniques we develop could be of use.
+
+We will produce an analytic flowchart/decision tree correlating experimental results, conditions for application, and possible mission foci appropriate to the various stakeholders.
+
+
+\vspace{20 pt}
+\begin{center}
+\ding{60}
+\end{center}
+\vspace{20 pt}
+
+Before proceeding to the hypotheses, we consider ethics, mission relevance, discuss the potential solution in general terms, mention relevant prior work, and review the scientific basis for the work.
+
+\pagebreak
+\section {Ethics }
+The scientific challenge also presents the ethical challenge. 
+
+Absent a unique identifier via an isotopic observation, all scientific products will be a matter of degree. Saying, for instance, that changes in electrical power draw and infrasound indicate a large piece of equipment is starting up may equate to a power reactor starting up when there is other evidence that it is a reactor: that is a useful result. However, detecting large equipment and its layout inside a building is a general concern of the intelligence community and not specific to explicitly nuclear security except as an intermediary step.
+
+Separating the nuclear-activity-specific research from potential surveillance is problematic in light of our assumption of composable methods. Our task is not to provide the intelligence community with new general surveillance capabilities. 
+
+The way forward is via `credit assignment paths' (CAPs), a term is borrowed from deep learning. CAPS are chains of possibly causal links between events or observations. 
+
+Operationally CAPS are the activation triggers, tips, cues, and feedback/feed-forward patterns that coordinate (possibly) correlated collections. At a higher level they include the various dynamical and remote analyses that both drive and follow observation.
+
+Credit assignment paths can be used to keep the research specific to safeguards, nonproliferation, and proliferation detection. CAPs that explicitly connect to specifically nuclear systemic, functional, or sensors and methods hypotheses will be the complete set of technical results of this work.
+
+\newpage
+\section{Hypotheses}
+\noindent Our top-level hypotheses are:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{enumerate*}
+\item Network modeling and analysis can represent reciprocal influence among networks relevant to nonproliferation, that is, influence percolating both up and down the networks.
+\item Network modeling and analysis can represent pattern-of-life around nuclear facilities with useful fidelity.
+\item Network modeling and analysis can integrate physio-technical sensing, informational (`soft') sensing, and semantic context.
+\item Network modeling and analysis can integrate  live and simulated data to support real-time hypothesis-space (`possible futures') exploration
+\item Networks can have both positive and negative expectations and can notice violations
+\item Network modeling and analysis can be used with information theory to quantify sensor coverage with respect to to available resources and idealized monitoring, and to produce minimum effective sets of sensors/collections.
+\item Credit assignment paths can be used to keep the research specific to safeguards, nonproliferation, and proliferation detection.
+\end{enumerate*}
+
+\noindent Accompanying the hypotheses, we claim that results from research on the above hypotheses can be generalized to non-cooperative facilities.
+
+\subsection{Hypothesis structure}
+The structure is:
+\begin{itemize*}
+\item Capsule mission relevance/application
+\item Hypothesis
+\item Confirming evidence
+\item Disconfirming evidence
+\item Null/control case
+\end{itemize*}
+Evidence-gathering is covered in the next section, Experiment Plan.
+
+\subsection{Two useful distinctions}
+The results of this work will comprise preponderance of evidence.
+
+This does not mean we won't have some categorical (true/false) results, only that they will generally not be binary. Saying a photon (for example) has no mass is a  categorical truth. Photons either do or do not have mass. For the complex aggregate networks we propose to treat, which are often nonlinear and nonequilibrium, we are unlikely to have binary criteria.
+
+As a result, we use `disconfirming' when considering evidence rather than `falsifying.' Disconfirmation is more suitable to things that are likelihoods and distributions. The Interdependent Networks project will succeed if we develop characterizations that are (a) at least potentially useful, and (b) specific enough that they can be incrementally improved. Potential utility and the possibility of incremental refinement are things for confidence judgements, not falsification.
+
+\pagebreak
+\subsection{Reciprocal influence}
+\subsubsection{Specific mission relevance}
+
+Nonproliferation and proliferation detection encompass double-digit orders of magnitude in time and space. Standards of evidence vary as widely as the precision with which things can be measured and the degree of inferential binding to specific NFC processes and products. Some examples: nanosecond physics to multi-year capacity development (time); highly-local materials to many-thousand-kilometer supply chains (space); periodic table element isotopes to hidden processes and activity-based deduction (inference). Methods to integrate disparate phenomena and measurement across these wide ranges are of potential value. 
+
+\subsubsection{Hypothesis}
+The hypothesis is:
+\begin{quote}
+Network modeling and analysis can represent reciprocal influence among networks relevant to nonproliferation, that is, influence percolating both up and down the networks.
+\end{quote}
+
+\subsubsection{Confirming evidence}
+We will develop three lines of evidence:
+\begin{enumerate}
+\item Demonstration of functionality, i.e., that percolation is in fact happening in both directions, top (more abstract) to bottom (less abstract) and bottom to top. 
+\item Production of high-quality `predictions' of past events
+\item Appropriate sensitivities to parameter-value ranges, e.g., when clamping all but a single factor, the resulting model behavior is consistent with our real-world knowledge.
+\end{enumerate}
+
+\subsubsection{Disconfirming evidence}
+We will assess two lines of evidence:
+\begin{enumerate}
+\item Mutual influence only because of hand-coding each example
+\item No difference between reciprocal model and first-order (no loops or cascades) model 
+\item Insensitivity to actual values, e.g., in clamping if wide variations in the values of unclamped parameters have little effect on the outcome.
+\end{enumerate}
+Regarding the last bullet, we have claimed that networks can be nonlinear but not chaotic. Tremendous amounts of work have gone into buffering and redundancy to avoid allowing  the NFC to behave as a chaotic system. From this, we would count excessive sensitivity to parameter value changes as disconfirming evidence. 
+
+\subsubsection{Null/control case}
+The control will be the current model of political influence as constructed during the Network of Networks project. The Structural Proliferation Metric introduced in that work will be our baseline.
+
+{\color {red} Do we need to do this for two domains? It's probably our most important result, since it's a real thing and to my knowledge is not being modeled or addresses at all anywhere else in the DNN portfolio.}
+
+\pagebreak
+\subsection{Multi-network modeling and analysis at a nuclear facility}
+
+\subsubsection{Specific mission relevance}
+In the absence of direct detection of highly specific nuclear materials, indirect evidence must be used to understand the activities at both declared and undeclared potential facilities. Pattern-of-life provides important information to inform such assessments, including boundaries on potential production levels.
+
+\subsubsection{Hypothesis}
+The hypothesis is:
+\begin{quote}
+Network modeling and analysis can represent pattern-of-life around nuclear facilities with useful fidelity.
+\end{quote}
+
+`Useful' means the discovered patterns can enable either directly or in combination with other evidence knowing where and when to look for significant or revealing NFC-specific events. 
+
+\subsubsection{Confirming evidence}
+There are two items of confirming evidence:
+\begin{enumerate}
+\item Networked multimodal collection of characteristic regular signals around the HFIR facility, with analysis associating signal value clusters to normal events. For example, the combination of infrasound, sound, ultrasound, light, IR, magnetometer, and accelerometer (vibrometer) might establish a signature for a specific truck, from which an arrival/departure schedule can be developed, and potentially ingress and egress loading. 
+\item Identification of events at multiple time scales, e.g., day/night, week/weekend, bi-weekly or monthly deliveries, \&c.
+\end{enumerate}
+
+\subsubsection{Disconfirming evidence}
+There are four items of disconfirming evidence:\footnote{Multiple  items of disconfirming evidence traveling together are call a clobber.}
+\begin{enumerate}
+\item Incoherence, i.e., irreconcilable contradictions that are a systemic feature rather than an aberation
+\item Inconsistency, i.e., enough drift and random contradiction that false positive and false negative results are so frequent as to make the system untrustworthy
+\item Unreliability, i.e., so may dropouts and incomplete measurements that results are untrustworthy
+\item Noise swamping signal, i.e., excessive algorithmic application to `force' signal out of noise
+\end{enumerate}
+
+\subsubsection{Null/control case}
+A fire station will serve as a control. This illuminates the bipartite nature of the hypothesis, that (a) we can detect and build a model of pattern of life, and more challenging and important, (b) we can discriminate and include things, like fuel delivery, specific to a nuclear installation by (i) detecting fuel delivery at the fire stations, and (ii) empirically establishing key differences between fire stations and NFC facilities in delivery and acceptance.
+
+\pagebreak
+\subsection{Heterogeneous data in a unified framework}
+\subsubsection{Specific mission relevance}
+If the assertion that indirect evidence will be prominent is accepted, being able to encompass the widest possible range of potential evidence is a natural extension. To date our community has not been looking at full heterogeneaity. A modeling and analysis approach that can integrate things as distinct as the meaning of a newspaper report with an on-the-ground sensor measurement opens the space of possibility.
+
+\subsubsection{Hypothesis}
+The hypothesis is:
+\begin{quote}
+Network modeling and analysis can integrate physio-technical, informational (`soft') sensing data from open and social media, and semantic context.
+\end{quote}
+
+`Semantic context' encompasses history, both recent and deeper, relevant circumstances, and anything else that conditions the meaning of the physical and informational signals. For example, engine loading can potentially be used determining whether a chemical truck is carrying material. DEM (digital elevation model) files can be used to create a baseline by capturing the truck's characteristic engine sound on the level and going uphill. This comprises semantic context; when the truck sounds like it's going uphill when on the flat, we infer that it's loaded. In this case we derived context from the combination of physical signal and general knowledge, but in the same way smartphone calendars can detect dates and times in emails a similar context could be derived from the published schedules on the HFIR site.
+
+\subsubsection{Confirming evidence}
+A demonstration at an actual nuclear facility will comprise an existence proof. Both the University of California/Lawrence Berkeley Lab 88-inch Cyclotron and the High-Flux Isotope Reactor (HFIR) are candidate sites.
+
+\subsubsection{Disconfirming evidence}
+If only plainly artificial demonstrations are possible the existence proof loses persuasive power. For example, if collected evidence is ambiguous without imposing ungeneralizable hacks, we'd consider the hypothesis disconfirmed.
+
+\subsubsection{Null/control case}
+We will use a training event at the Nevada Nuclear Security Site as a control. The NNSS conducts police an first-responder training year-round and has facilities to simulate a wide range of events. 
+
+{\color {red} Is this a good control?}
+
+\pagebreak
+\subsection{Mixed live and simulated data}
+\subsubsection{Specific mission relevance}
+In any new area, the capacity to perform many low-cost experiments means that experience can be gained rapidly and without draining resources. Simulated integration of new devices, tipping and cueing, and dynamical network sensitivity adaptation are examples of goals that early mixed simulation/real sensing could serve. This is particularly true when such experimentation can be done in the field. How well does a heterogeneous-device network perform when there are episodic, aperiodic, full or partial comms dropouts? Can it be made more resilient? Another example: if there is good access, then rather than optimizing each part and hoping for the best, a mixed simulated/empirical assessment can rapidly be developed for deployment of a suite of sensors by varying simulated proximity, occlusion, interference, connectivity, and so on.
+
+\subsubsection{Hypothesis}
+The hypothesis is:
+\begin{quote}
+Network modeling and analysis can integrate  live and simulated data to support real-time hypothesis-space (`possible futures') exploration
+\end{quote}
+
+\subsubsection{Confirming evidence}
+A sequence of three demonstrations will comprise an existence proof:
+\begin{enumerate}
+\item In a controlled (laboratory) setting
+\item In the field
+\item In the field with a dynamical change of the (local) hypothesis or measurement parameters
+\end{enumerate}
+
+\subsubsection{Disconfirming evidence}
+We identify two potential types of disconfirming evidence.
+\begin{enumerate}
+\item Artificiality, i.e., if only contrived and unrealistically simple scenarios or circumstances can be addressed, or if more complex scenarios or circumstances require extensive hand-coding for each experiment or exploration
+\item Inflexibility, i.e., if it can only be used in tightly constrained circumstances without incurring more-than-it's-worth costs.
+\end{enumerate}
+
+\subsubsection{Null/control case}
+The control case will be a normal expert-judgement (`best-guess') sensor deployment, with a range of common and uncommon events to detect.
+
+\pagebreak
+\subsection{Networks with expectations}
+\subsubsection{Specific mission relevance}
+Persistent sensing is needed if pattern of life is to be adduced from accumulated evidence. As well, aperiodic low-level signals (like trace effluents) require continuous monitoring. However, the risk exists of generating too much data. A network model that has reasonable time- and location-sensitive expectations about normal activity can minimize uninformative data and can recognize a contenxt-sensitive lack of data as data.
+
+\subsubsection{Hypothesis}
+The hypothesis is:
+\begin{quote}
+Network modeling and analysis can have both positive and negative expectations and can notice violations
+\end{quote}
+
+\subsubsection{Confirming evidence}
+A demonstration that meets the following criteria will comprise an existence proof:
+\begin{enumerate}
+\item The demo relies on the network representation of heterogeneous data, and would otherwise be cumbersome, error-prone, or intractable
+\item It represents a realistic test environment
+\item It shows  detection of a positive anomaly in at least two modes
+\item It shows detection of a negative anomaly in at least two modes
+\end{enumerate}
+\textellipsis where a positive anomaly is an unexpected event, and a negative anomaly is the lack of an event when one would normally be expected.
+
+\subsubsection{Disconfirming evidence}
+A principled failure will disconfirm the hypothesis, e.g., as resulting from intrinsic underdetermination. This might occur when existing context knowledge and sensing modes are not capable of discriminating two different kinds of events. More likely, there will be a range of conditions with varying degrees of confidence: to use an example from a separate project, 75 kg mammals moving in the night may not be anomalous (wild pigs) while 75kg mammals carrying metal (guns) may be. Correspondingly, the abrupt absence of foraging animals near a camp may be an example of negative evidence.
+
+\subsubsection{Null/control case}
+Fire stations will be proxy facilities for anomaly detection. Their differences with a nuclear facility, like HFIR, are disadvantageous to our test framework. For example, staffing does not change on holidays, unlike a typical nuclear facility. But fuck it, it's what we have.
+
+{\color {red} Would be really nice to have the MINOS science plan to specify this. We have to do something, but MINOS would be preferable. Also many need to change the wording above. End of the day.}
+
+\pagebreak
+\subsection{Quantifying sensor ensemble coverage}
+\subsubsection{Specific mission relevance}
+As a community, we lack empirically-derived metrics for the relationships between sensing modes, having in the past relied on simultaneous views of the same experimental ground truth. When the focus is integration and analysis of indirect evidence, probability and confidence necessarily add to that. Any movement toward a rigorous method for quantifying the contributions of various sensing modes (and sampling frequencies) with respect to target identification or confidence is a move forward.
+
+\subsubsection{Hypothesis}
+Network modeling and analysis can be used with information theory to quantify sensor coverage with respect to to available resources and idealized monitoring and to produce minimum effective sets of sensors/collections.
+
+\subsubsection{Confirming evidence}
+We shall demonstrate that model outcomes are consistent with experimental results. Using a suite of Canaries we will vary both signal set and device configuration to explore the strength, weakness, and either the robustness or the brittleness of the entropic model. 
+
+\subsubsection{Disconfirming evidence}
+\begin{enumerate}
+\item Mismatched weightings from equal-valued parameters
+\item Linear algebra model (are we any better?)
+\end{enumerate}
+
+\subsubsection{Null/control case}
+\begin{enumerate}
+\item Single unique ID, e.g., like a street address
+\item Equal-valued parameters (multiple adequate-in-themselves IDs, e.g., driver's license, passport number, SSN)
+\end{enumerate}
+
+\pagebreak
+\section{Experiment plan}
+
+These topics here are written as sketches, pending comments and discussion. Some are in formal language from the existing LCP, most are less formal, suitable for our discussions but in need of rewrite for the submitted document.
+
+\subsection{Reciprocal influence}
+Modify the data sets feeding the polisci model to intentionally introduce escalation patterns, or seed them, perhaps by creating `rival' relations that muchly increase the weight on anything pro-SPM selectively, and look at year to year patterns. Mess with the parameter values to show escalating and deescalating factors/conditions.
+
+That's the first half. Then we'd want to map to real use cases, to show that the model on drugs (fake data) nonetheless is capable of realistic percolation. 
+
+Inadequacy: shows bottom-up mutuality in generating the high-level summary ratings, but doesn't show any kind of movement across levels of abstraction. There's side-to-side (rival to rival) reciprocity but no bottom-up/top-down influence. For example, if there was a way to posit `decision to pursue proliferation' at a high level and we saw an increase in NCAs and maybe a selective decrease in trade? I'd like to show a computational network model of a mereological system.
+
+{\color {red} This doesn't feel all that far away, but not quite there.}
+
+\subsection{Multi-network modeling and analysis at a nuclear facility}
+Correlations between high-volume heterogeneous sensing data and ground truth can be identified. This is intended for MINOS, but we've heard nothing since the announcement of the core team.
+
+\begin{enumerate*}
+\item STL (parking lot traffic, SCIF doors opening)
+\item Cyclotron (parking lot, spinning up and down)
+\item Fire stations (cyclic and acyclic traffic, differentiation of different kinds of vehicles)
+\item HFIR/REDC or if that falls through maybe the DAF
+\end{enumerate*}
+
+We listed the fire stations as the control in the Hypothesis section. If it turns out the Cyclotron is our best site we?ll need to figure out something to simulate fuel delivery as there is at HFIR. 
+
+Nonlinear frequentist methods have shown that an analogous problem can be addressed with respect to a highly sensitive facility (Simonson \textit{et al} 2016 \textit{op cit}). Our approach is different, but the flexibility of multilayer and multiplex networks allows inclusion of those results should that accelerate progress.
+
+\subsection{Heterogeneous data in a unified framework}
+This is where we want to show context (domain knowledge), info sensing, and physical sensing combine felicitously. In the current LCP we focused on MINOS. This is where the `find the trucks in social media images' task arose. 
+
+We need three parts:
+\begin{enumerate*}
+\item Context 
+\item info sensing
+\item Physical sensing
+\end{enumerate*}
+
+Let me throw in an overlap with Lunar Cat. For reasons that make zero sense to me specifics are classified, so with some vagueness the idea is to follow materials from signature-rich stages of the NFC to signature poor stages. Receipt o materials from an earlier stage becomes the signature of interest. It's a turtle-on-a-tree-stump analogue: we didn?t see the event, but it had to have occurred; in our case, there's only one thing you do with certain materials. 
+
+Following this line of thought, identification of heavy trucks going into and out of a facility would be a test case for us, particularly if we could discern whether they're loaded or empty. I suppose the 88-in cyclotron is outstanding in this regard. Yep, that truck is laden down with hydrogen ions. Look at that suspension damping!
+
+Sorry. Say we used the fire stations and tracked fuel delivery.
+\begin{enumerate*}
+\item Context would include the relevant parts of the road network, that it's a self-sufficient facility, \&c.
+\item info sensing would find tanker trucks in images `nearby.' Difficult, since there aren?t a lot of Imgur posts from the Test Site and it's so huge that images from outside are not definitive. Still, could be done.
+\item Physical sensing would detect a `foreign' truck (not a repeating signature as from a fire truck) at a fueling dock, possibly differences in engine sound or some other signature between arrival and departure.
+\end{enumerate*}
+
+If we could do this next year, then the third year for info sensing could be extracting specific content from text, e.g., reading the HFIR Web site for operational schedules and correlating with physical sensing. For the info sensing, showing that we can find towers, people in uniforms, trucks carrying big cylinders, people in uniforms around trucks, possibly radiation symbols, and could extract timing of operations from text: that would be a nice bag. 
+
+The testing would be analytic confidence in (a) context + info sensing; (b) context + physical sensing; and, (c) context + both. 
+
+Bad parts: 
+\begin{enumerate*}
+\item Analytic confidence is subjective unless we take photos of fuel delivery trucks with the fire station clearly in the background \textit{and} train an image classifier not only on trucks but on fire stations. 
+\item Info sensing + context, viz., knowing where the underground fuel storage tanks are, might be enough to have high confidence.
+\end{enumerate*}
+
+To clarify by exaggeration, if a continuous video of a target truck were to be posted on open media, informational sensing wouldn't need physical sensing; alternately, if we had high-resolution physical identification of, e.g., unique sound patterns per truck and had Canaries place every ten meters for all routes, informational sensing would add near-zero value. 
+
+In the Hypothesis section I suggested a training event at the Site as a control. (The Site runs training events for first responders year-round. They have train cars, a full-sized passenger jet, and so on.) Thinking now, perhaps that should be changed to two controls, one in which only context + info sensing is needed (recognize an aerial photo of the HFIR facility), one for context + physical sensing (count cars into/out of the HFIR parking lot). 
+
+I'm good with the text that follows (from the existing LCP), but we need to map out our specific experiments. I'd really like an experiment that shows the combination of info and physical together in the best light: what about something seemingly bland like a MTD (metro transit district) depot? City busses in various locations around a city, concentrated flocks of the them in a large lot, a building with the same logo as the busses associated with the lot, \textellipsis This would satisfy a lot of our test criteria, but then we?d need to justify it as an analogue to a real proliferation detection scenario. VIP busses at a suspected site?
+
+This is, for me, the centerpiece of the work. 
+
+--- --- ---
+
+%For the MINOS nuclear fuel cycle test bed at HFIR, a multiplex and multilayer network model will be constructed to represent and evaluate data types/products that arise from operations. Each Canary has location, time, temperature, pressure, humidity, infrasound, sound, ultrasound, visible light, IR (4$^\circ$ differentiation from background), vibration, metal (magnetometer). These can be sampled on threshold or cyclicly (once per second, once per hour, depending on what is being measured.)  sampled once per second 24/7. Because the Canary devices work as a network and include long-range (~15km) communications, movement, portal, and extended tracking are possibilities. 
+
+%The network structure and interdependency of this data will comprise an information map, and data redundancies and constructive interference (in the context of decreased uncertainty in assessments) will be quantified.
+
+%As a minimum, we expect to be able to discern the operating schedule of the HFIR facility from the indirect network measures Talking Drums will provide, not using any internal HFIR data. The facility publishes their operating schedule, making ground truth easily available.
+
+%To quantify the network of physical and informational sensing, we shall:
+%\begin{enumerate*}
+%\item Identify a narrow, specific topic in informational sensing, e.g., identifying radiation-marked trucks in social media within a 20km radius of HFIR
+%\item Use the Google Image API or similar to track vehicle movement for a month
+%\item Modify existing code to distinguish individual vehicles by sound (physical sensing) (to follow the prospective example), and similarly record physical data for a month
+%\item Use event logs to generate ground truth, and as well use Canaries to create the average truck traffic logs needed for the base rates used by the next step.
+%\item Over a constrained transport network, construct three straightforward Bayesian probabilities for most-likely route traversal:
+%\end{enumerate*}
+
+%Physical sensing alone
+
+%Informational sensing alone
+
+%The combination of physical and informational sensing
+
+Analytically assess the relative sensitivity, i.e., the differences in outcome as (simulated) resolution changes for each of the physical and informational signals. 
+
+We predict the combination of both modes of sensing will produce a significantly higher-likelihood identification for materials transport than either alone. This may seem trivial (`more evidence will be better than less evidence') but we view materials tracking as a power-law process, and seemingly small changes in confidence can be consequential in analysis. And contra to the exaggerated example above, we expect it to be rare in real life to have complete and high-resolution sensing, particularly for proliferation detection.
+
+\subsection{Mixed live and simulated data}
+One possibility is to go out to the Test Site and piggyback on an explosion. We could instrument with Canaries and prior to the event generate multiple (simulated) levels of sound and vibration while leaving other data live as-is, and run through experiments to calibrate the expected seismic force of the experiment. 
+
+I feel like I'd like to have Zoe and Tim involved here, but not sure how.
+
+\subsection{Networks with expectations}
+An example of a complex multi-network model having expectations will be the emergent ability of a network to detect what it doesn't detect, e.g., a truck leaving the facility but not being seen on any of the standard exit routes. 
+
+For networks to have expectations, there must be forward (temporal) propagation of events that can be matched to prototypal signatures or patterns that the receiving network encodes. The encoding may be structural or via patterns of data values, but in either case the network must discriminate similarity to past or known patterns of physical, informational, or combined sensing. to achieve this, we propose to:
+
+\begin{enumerate*}
+\item Analytic induction of `pattern of life;' more cars into and out of the parking lots on weekdays is an example, or a ramping up of traffic as an experiment approaches
+\item Pattern completion or projection, for which there are many approaches: inductive pattern completion (MacKay 2007), spreading activation (Hendler 2014), complex cueing (Kornell et al 2014b); any of these can cause a network `expectation.'
+\item An approach to weighting expectations, so that according to circumstances some are stronger than others, or alternately some violations of expectation are more consequential than others (Barrat et al 2004, op cit)
+\item A method for matching observation, whether from physical or informational signals, with expectations, and determining whether the expectation(s) can be resolved, either directly (`saw the truck') or logically (`the truck was seen on the other route')
+\item A way to report the violation of expectation and its degree, e.g., in RaptorX or as a simple line mode message.
+\end{enumerate*}
+
+We shall select a specific pattern from the data sets produced but Canaries at the Cyclotron or at HFIR/REDC and implement the abstract model in NetworkX. The formalism is not crucial, as long at it supports \textit{n}-state nodes and discrete state changes (to represent time steps). We will then run the network on normal life and either by manipulating recorded Canary data or modifying the live stream, generate multiple types of incomplete or inconsistent patterns.
+
+Network state will be monitored and a separate monitoring network will be incrementally activated and deactivated as events occur or don't occur and the corresponding expectations are fulfilled or not.
+
+\subsection{Quantifying sensor ensemble coverage}
+What is the minimum set of data products needed for a particular assessment? What alternate sets are there? At what confidence level? Now, expert judgement is the only way to a minimum sets of physical and informational sensing. But opportunities for practice are scarce and feedback is sparse, so practice is hard to come by, which means skill is less than we?d wish.
+
+An informational entropic method of quantifying complementarity and sufficiency, including resolution sufficiency in the context of multiple kinds of data, would be of value, if it could be systematized, tractable, and easily varied.
+
+{\color {red} The two paras above are fine, but they?re the argument for why this is (potentially) useful, which has already been made above in the hypothesis section. I?m inclined to excise them.}
+ 
+To quantify sensor deployment relative to mission needs, which explicitly include both detections and confidence levels, we shall:
+
+\begin{enumerate*}
+\item Build or computationally induce decision trees for two different scenarios, facility characterization and materials tracking. (Scikit-learn and other tools provide inductive decision tree functionality). We view this as a classificatory problem.
+\item Assess and quantify the branch criteria
+\item Encode the trees as patterns of binary information (Csiszer \& Korner 1981, MacKay 2007 op cit)
+\item Use the encoded trees as idealized signatures and measure the informational entropy to quantify the closeness or distance of any specific sensor or sensor combination.
+\item Vary the volume, variety, and quality of the sensor information to scope the the effectiveness of the approach.
+\end{enumerate*}
+
+For example, we're interested in whether a truck leaving a facility that may be producing UF\textsubscript{6} is loaded. The decision tree can be simple: did a loaded truck leave the facility or not? A more sophisticated tree might include activity in a loading area, detection of custom forklifts, 48Y or 30B cylinders, engine noise measurement, tire IDs, and so on.\footnote{ Modern tires have pressure monitors that broadcast once a second, and can be pulsed for a reading. The packet contains a unique identifier.}
+
+Following the simple example, our branch criteria (yes/no) has three parts: it's a heavy truck, not a car or light truck; it's leaving the facility, not returning; and it's loaded or not. Around that we have sensing, whether physical or informational, and the associated uncertainty per sensor. We have context, i.e., strong enough reason to believe the location of interest is a conversion facility. We also have a logical structure to account for missing or contradictory information, e.g., the microDoppler thinks the truck is loaded because the suspension damping is consistent, but the audio detects no characteristic strain of the engine. Of course, stand-off (inverse-square law), environmental conditions (SAR in rain, RF around metal walls), confounding factors (blockers for line-of-sight sensors), and so on need to be included. 
+
+Encoding is the critical step. It is conceptually simple, counting the bits needed to span the space of possibilities with respect to the criteria, but practically painstaking. How precisely does the correlation between a sensor detection and ground truth need to be expressed? What resolution is needed for certainty? How should different sensor readings be combined? The proposed experiment can answer these questions  in the small, for a specific scenario, since we will not only have access to ground truth, we will be able to manipulate it by moving Canaries, by repeating collections in different conditions, and so on. 
+
+We don?t claim that we will answer them in the large. Since our goal is to determine whether this approach is even possible, and since no other approach exists besides opinion and heuristic, excepting fixed sensors and sources, an answer in the small, if we can achieve it, will be a major step.
+
+When the networks are encoded, then either iterative or summary informational entropic measure can quantify the effectiveness of various sensing deployments relative to a desired mission outcome. 
+
+To the extent possible, since we're dealing with nonlinear data, we will also encode the experiments as linear algebra. This will serve as a control; if informational distance and the approach we propose to develop is not appreciably better than linear optimization, then even if successful is it not a meaningful advance.
+
+Informational entropy, as developed by Claude Shannon, or Tsallis entropy, as has had unexpected applications in computer science, provide the formalisms needed.
+
+\end{document}
