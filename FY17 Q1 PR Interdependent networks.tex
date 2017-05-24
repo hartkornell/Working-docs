@@ -1,0 +1,157 @@
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage{fixltx2e}
+\usepackage{mdwlist}
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or a4paper (Britain) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{xcolor}
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% WIDOWS & ORPHANS
+\widowpenalty=10000
+\clubpenalty=10000
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Interdependent Networks\\FY17 Q1 Report}
+\author{J.H. Kornell, Special Technologies Lab / NSTec}
+\date{03 Jan 2017} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+
+\begin{document}
+\maketitle
+
+\vfill
+\begin{center}
+US Department of Energy NNSA \\
+\textbf{Defense Nuclear Nonproliferation R\&D} \\
+WebPMIS: NST17-V-Interdependent Networks-PD3SS \\
+PI: J. Hart Kornell, NSTec, 805.452.8660, korneljm@nv.doe.gov \\
+Co-PI: Zoe Gastelum, Sandia Nat'l Lab, 505.845.1002, zgastel@sandia.gov \\
+Co-PI: Bethany L. Goldblum, UC Berkeley \& NSSC, bethany@nuc.berkeley.edu \\
+HQ: James Peltz, 202.586.7564, james.peltz@nnsa.doe.gov \\
+Funding start: 01 October 2016; Funding end: 30 September 2019
+\end{center}
+\pagebreak
+\section{Interdependent Networks FY17 Q1 Summary}
+\noindent Interdependent Networks  is an interdisciplinary research program focused on modeling and analysis of complex networks of heterogeneous nonproliferation and proliferation detection phenomena. 
+
+Kickoff, resource and technical planning,  model revision, and technical development filled the quarter.
+
+\section{Project kickoff}
+\noindent The three PIs met at the Nuclear Science \& Security Consortium office at UC Berkeley for a two day meeting. Current status, the LCP Y1 plans, and the MINOS venture were reviewed. 
+
+The LCP indicated cooperation with MINOS goals. Circumstances have changed since LCP submittal: the NSTec PI is also part of both the MINOS data management research and the data analytics team. The intertwining of Interdependent Networks with the MINOS science planning is compelling. 
+
+Products of kickoff:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize*}
+\item Sandia (ZG): Developed a draft project work plan for Sandia-specific activities for years 1 through 3 of the project
+\item Berkeley (BG): Developed model revision plan
+\item Berkeley (BG): revised journal publication plan
+\item NSTec (JK): Plan MINOS network computing capacity and routes to same
+\end{itemize*}
+
+\section{Resource and technical planning}
+\noindent This applies to NSTec and Sandia. See \textit{Open issues}, below, for UC Berkeley.
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize*}
+\item Sandia (ZG): Established a team of technical experts and advisors to support the machine learning and neural net aspects of the project
+\item Sandia (ZG): Held introductory team meetings with other Sandia MINOS projects for additional familiarization
+\item NSTec (JK): Hired Daniel Ng as a full-time software engineer; Daniel's background is IoT and data analytics
+\end{itemize*}
+
+\section{Model revision}
+\noindent The Berkeley team significantly revised and extended the current model under BG guidance, and with her substantial direct involvement. This  has been \textit{pro bono} nights-and-weekends work by Dr Goldblum. An extraordinary contribution, particularly considering the issues with funding (see below). A revised journal publication is planned.
+
+\section{Technical development}
+\noindent The Sandia core task for FY17 is to explore and demonstrate discovery of unintentional nonproliferation-relevant content in open media. We would like to track shipment of radioactive materials via social and news media photos. To that end, ZG and the Sandia team:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize*}
+\item Drafted initial test cases, ground truth, and data collection plans
+\item Automated data collection from Flikr, and compiled an initial dataset of 3000 (1500 each) training and validation images, manually labeled
+\item Purchased a deep learning-optimized computer for better computational time for neural net training
+\item Began using TensorFlow to train simple neural net models on proof-of-concept model for nuclear cooling tower recognition\footnote{TensorFlow is Google's open source system for deep learning}
+\item Experiments conducted this quarter in developing an initial neural net include:
+\begin{itemize*}
+\item Explored regularization techniques to avoid overfitting
+\item Compared color and greyscale analysis
+\end{itemize*}
+\end{itemize*}
+
+\noindent Near-term plans for Sandia:
+
+In the next few months, SNL will advance the current test case with hyperbolic cooling towers to begin development of a model to distinguish cooling towers with steam plumes versus those without. Once the model is stable, we will compare ground truth of open U.S. reactor data to results from the steam plume analysis to determine the validity of the indicator for reactor operation. Future experiments for the cooling tower recognition model include:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize*}
+\item Run hyper-parameter studies on current neural net 
+\item Explore image augmentation techniques such as mirroring, rotation, cropping
+\item Continue exploring different network architectures and batch normalization
+\end{itemize*}
+Sandia will begin preparation for additional use cases and collection of ground truth data, for example detection of uniformed personnel.\\
+\\
+\noindent NSTec focus has been on computational estimation relevant to MINOS. 
+
+We will be using the Canary device for MINOS-related network development. An outgrowth of EC's Talking Drums, now funded through different projects, Canary is a self-organizing multi-sensor: GPS, temperature, pressure, humidity, light, audible sound, hypersound (to 100Khz), infrasound (planned), accelerometer, magnetometer, and potentially VOCs. Canaries can mesh locally and can communicate up to 16 km via their LoRa radios, which can also mesh. Nominal life without exposure to light is 11 years with twice-per-second mesh checkins; with light, it is indefinite. 
+
+Once the local shakeout is complete, a suite of Canaries will be delivered to the UC Berkeley team for local deployment. The envisioned test network at UC Berkeley will have the potential for 8-to-10 independent (but correlated) networks. Since network capacity and processing efficiency are important, we want to know, how many paths? Suppose we put out $50$ Canaries. They cost roughly \$100 each, so that's not unreasonable. Not counting  infrasound or VOCs or GPS, we have eight sensors per device. Let's assume they're fully meshed. Let's also assume it's a `flat' network, with no higher-order clustering, so only pairwise links  exist. The number of directed paths along which data or cues can be sent follows $n(n-1)$, so we have  $400 \times 399 = 159,600$ paths.\footnote{Positing that sensors can't cue their future selves, which is in fact incorrect. They can.} We expect movement across time. It is central to interdependency. The number of paths a  simple 6-measurement cascade can follow is
+\begin{center}
+$$\prod_{i=159,595}^{159,600} = 1.035\mathrm{e}{31}$$
+\end{center}Of course there can be more than six measurements in a cascade, and there can be and are likely to be $n$ cascades at any time. Multiplying the number above by $20$ or $30$ times for concurrent cascades hardly makes a difference. One more step in a cascade adds five orders of magnitude. Long cascades can reasonably be expected. 
+
+Designing layered processing is necessary. That design work, including virtual events and distributed semantics, is in progress.
+
+\section{Publications}
+\noindent With HQ permission, we would like to submit an abstract to the annual meeting of the Institute of Nuclear Materials Management, for the International Safeguards/Information Analysis Techniques \& Methods topic area to introduce the research to the application community. 
+
+BG has been invited to discuss the program and the model at Stanford in March.
+
+BG and JK met with a Cal political science doctoral candidate who is now helping us prepare a journal submission with the proper journal- and reviewer-specific content.
+
+\section{Open issues}
+\noindent Funding has still not arrived at UC Berkeley. Since NSTec has proved it self incapable of contracting with UC, and Desert Research Institute has also been blocked, the existing Sandia funding will be `shared' until \$200K of the allocation to NSTec can be reallocated to Sandia, which can and does contract with the University of California. Apparently, the NNSA finds E.O. Lawrence's and Glenn Seaborg's home institution unreliable for partnership, an irony that must be somewhat striking at Lawrence Livermore NL. 
+
+This has been problematic for some time. It is urgent that it be repaired. We are deeply grateful to Ms Gastelum for pressing within Sandia, and particularly to Dr. Goldblum for her perseverance and patience in the face of institutional rigidity.
+
+\section{Funding}
+Year 1 funding is adequate to complete the current fiscal year.\
+
+
+\end{document}
