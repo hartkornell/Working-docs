@@ -1,0 +1,100 @@
+\documentclass[11pt]{letter} % use larger type; default would be 10pt
+
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage{fixltx2e}
+\usepackage{mdwlist}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{csquotes}
+
+\usepackage{pifont}
+\usepackage{lmodern}
+\linespread{1.1}
+\pagenumbering{gobble}
+
+\begin{document}
+%{\fontfamily{lmdh}\selectfont
+2017.06.15
+
+\textbf{Canary instrument response notes} 
+
+Canary provides light, IR, sound, ultrasound, infrasound (in development), temperature, pressure, relative humidity, magnetic response, and movement detection (3-axis accelerometer). Canary is being developed on a shoestring and as of this writing calibration  has not been performed on any of the sensors. We store raw data; for development of algorithms, arbitrary units can be assumed.
+
+\vspace{30 pt}
+
+\textbf{Sound}
+
+Canary supports human-audible sound, ultrasound to 80 KHz, and will support infrasound (1---20 Hz). We have four potential conditions:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{enumerate*}  
+\item Steady-state fixed source 
+\item Approaching/receding source 
+\item Fixed source, moving Canary 
+\item Moving source, moving Canary
+\end{enumerate*}
+
+For MINOS we will assume a fixed Canary. 
+
+For a fixed stable source, with even amplitude and frequency, e.g., a generator or HVAC system, we have a two-state step function. This can be treated as a binary value. Or, if there are levels of output, a normal step function can be used:
+\begin{equation}
+\centering
+f(x) = \sum_{i=0}^{n} \alpha_i \chi_{A_i} (x)
+\end{equation}
+
+Where \(\alpha_i\) are the intervals. This applies to both audible and ultrasound.
+
+For continuous sounds that approach or recede with a constant velocity relative to a fixed Canary,
+\begin{equation}
+\centering
+f = (\frac{c}{c + v_s})f_o
+\end{equation}
+\textellipsis where \(f\) is what the microphone measures, \(c\) can be assumed constant for us (velocity of waves in the medium, air, which will vary some but not enough to make much difference), \(v_s\) is the velocity of the source (relative to the fixed receiver), and \(f_o\) is the emitted frequency. Approaching compresses waves, raising frequency, receding expands them, lowering it. 
+
+It will be possible with three Canaries to determine both velocity and approximate location, which in turn will allow `cleaning' the sound signal of the Doppler effect 
+
+We expect the same functions to apply to infrasound.
+
+This is a discussion of idealized sensing, e.g., single sources emitting single frequencies, quiet from other sources, distinct non-overlapping signals, correct gain, and so on. It also implicitly emphasizes frequency, assuming amplitude can be normalized. In practice, amplitude may carry important information, such as the load on a motor. Most notably it does not address:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{enumerate*}  
+\item Continuously variable fixed source 
+\item Moving source which is also either continuously variable or cyclically variable (like a manual transmission car accelerating)
+\item The differences in environmental attenuation for different frequencies
+\end{enumerate*}
+
+A further complicating issue in practice is sampling rate. Canaries are extreme-low-power devices meant for multi-year autonomous persistent monitoring. As such they sample  selectively, e.g., 10 \textit{m}s per second, leaving the microphone asleep 99\% of the time. Sampling rates can be dynamically adjusted, and that adjustment can be sensitive to specific sounds. Canaries are not designed for literally continuous operation.\footnote{In practice, more `on' cycles will be used early to learn environmental factors, so that they can be quickly identified in normal operation. In addition, many modern sensing chips have trigger-on-threshold capability, which allows low-power `sleep' mode such that the sensor only reports when the input levels exceed a programmatically defined threshold.}
+
+Our goal is to distinguish signatures, where the shapes of the multiple waveforms will comprise the contribution of sound to identification of features. The set of relative frequencies, and how they change with respect to one another, will be central. Further, in most cases we expect to be comparing waveform sets from multiple physical devices. The above can be used to initiate model-construction, conditioned by the knowledge that the algorithms used int he field may be different.
+
+\vspace{30 pt}
+
+\textbf{Light and IR}
+
+The light sensor provides 23 bits of resolution. 
+
+\vspace{30 pt}
+
+\textbf{Temperature, pressure, humidity}
+
+Face it, these are boring, unless you're a chemist.
+
+\vspace{30 pt}
+
+\textbf{Magentometer}
+
+Idealized, this is \(\frac{1}{r^2}\), where \(r\) is the distance between the source and the Canary. As with other measurements, whether the source is fixed or moving matters, as does the speed of movement. Large moving rapidly and small moving slowly may provide indistinguishable signal. Similarly, large further away and small closer may be indistinguishable. As with other sensing modes, having multiple Canaries allows for algorithmic disambiguation. 
+
+\vspace{30 pt}
+
+\textbf{Accelerometer}
+
+Shakin' all over.
+
+
+
+
+\end{document}
