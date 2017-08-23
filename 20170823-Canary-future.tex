@@ -1,0 +1,123 @@
+\documentclass[11pt]{letter} % use larger type; default would be 10pt
+
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage{fixltx2e}
+\usepackage{mdwlist}
+
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{adforn}
+\usepackage{textcomp}
+\usepackage{bold-extra}
+
+\usepackage{pifont}
+
+\begin{document}
+%\pagenumbering{gobble}
+%2017.08.23
+
+
+\Huge{Canary Future}\\
+\normalsize
+\\
+I believe it's time we institutionalize Canary. Here is a narrative starting point.
+
+\vspace{20 pt}
+
+\textsc{\textbf {Hardware Is The New Software}}\\
+This is true on two levels. First, hardware is beginning to approach software in complexity. Second, more importantly for us, composition of complex hardware artifacts can be achieved by combining existing, sophisticated components. 
+
+When we refer to a hardware platform, conventionally we assume we mean as a basis for software development, with the hardware being fixed. In the new meaning, the hardware is not fixed. In the same way a software environment like Eclipse---or RaptorX---can be a software platform for software development, so it is now possible for a hardware platform to be a foundation for hardware development. 
+
+The model is not so much analogous as directly parallel: the environment provides a suite of useful core services and a set of APIs for development of new capabilities to tailor the platform to a task/deployment environment.
+
+Canary is this kind of platform. 
+
+\vspace{20 pt}
+
+\textsc{\textbf {Brief Review}}\\
+\textit{Insert image.} Canary is a small, inexpensive hardware platform. Its core sensing services are temperature, pressure, humidity, infrasound, audible sound, ultrasound, light, infrared light (PIR), accelerometer, magnetometer, and GPS. Its core comms services are a self-organizing local mesh, and a long-range radio that also self-organizes as a mesh. Six essential features:
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize}
+\item It is extremely low-power; nominal unattended operational lifetime is 11 years without light exposure to its photovoltaic cell
+\item It has a fully modular board layout; component parts can be swapped without meaningfully changing the board layout. For instance, a customer need may require a 9-axis accelerometer. We can swap out the current 3-axis accelerometer and swap in the more powerful component without changing other components. This is a central feature for a longer-term platform. Even the CPU can be replaced.
+\item It is built to include daughtercards via a standard ten-pin I2C interface, making sensing or functional extension the hardware equivalent of writing a RaptorX plugin.
+\item It is cheap. This is intentional and important. We can deploy a hundred Canaries for \$15,000, and becuase they self-organize, we can literally throw them at a problem. Yesterday we sent one to over 103,000\textquotesingle  elevation, for calibration, long-range testing, and fun. An experiment we could not have done with a \$5K board.
+\item It is designed for use at Labs and the Site. We intentionally left camera (PII) and WiFi (official networks) capability off the device
+\item The software capability to analyze multimodal data has improved exponentially over the past few years, with no signs of slowing, so multisensor data from hundreds of Canaries can be transformed into insight
+\end{itemize} 
+
+\vspace{20 pt}
+
+\textsc{\textbf {Sample Applications}}\\
+Applications for an inexpensive sensing platform exist in research, in high-end customer support, and in Site operations.
+\renewcommand\labelitemi{\tiny$\bullet$}
+\begin{itemize}
+\item Research: HF sensing, truck id and loading detection, cueing high-value assets
+\item Detection/monitoring: Fixed urban environment monitors for thermal neutrons, gamma; discovery of reverse-pressure facilities in light industrial parks and unexpected locations; disposable gamma ?heat-maps? for forensics
+\item NNSS: Radioactive particulate detection for wildfires on/near Site; pattern of life monitoring for anomaly alerts (bad flu reducing staff at two fire stations at once); unusual activity outside gates (truck/trailer parked overlong); ground truth
+\end{itemize}
+
+A key feature of Canary meshes is in making it easy to do inexpensive experiments. For instance, a proliferation detection capability we'd like to have is to know when loaded trucks leave a facility. We can do tw quick experiments with Canaries:
+\begin{enumerate}
+\item Can we individually identify a specific truck? Find two matching models of car in the parking lot, drive them by a few times, look at the multimodal traces: distinguishable? With what error bars? 
+\item Can we tell if a truck is loaded? Drive it flat, get the data, drive it uphill, get the data. Distinguishable? 
+\end{enumerate}
+Two people in a week could get answer to both.\footnote{This is something in the mission space we?d really like to know. Millions have been spent on it so far.} Perhaps not definitive, but enough to specify whether the multisensor approach is likely to be valid and what sensor performance or redundancy would be needed for a field device. 
+
+\vspace{20 pt}
+
+\textsc{\textbf {Business Model: Production Efficiency}}\\
+For the long-term health of the technical elements of MSTS---STL, RSL, and NLV---reducing cost and personnel without diminishing productivity requires the best tools. Having a systems engineer start every contract anew is no longer a viable business model. Canary as a platform for persistent CBRNE monitoring and alert allows contracted applications to focus only on the specific specialization required by the customer. All of the standard features a deliverable device must have are already built, stable, and tested. Contract time is spent exactly and only on the customer's most important need.
+
+Further, as specialized modules are developed, they become part of a library. The question increasingly becomes, not the invention fo a new wheel, but a question of what size wheel do you need?
+
+\vspace{20 pt}
+
+\textsc{\textbf {Program Management \& Technical Leadership}}\\
+I have been program manager and Sashi the technical lead. This is brittle and places core expertise in an external person. It is not where (I believe) we want to be.
+
+Canary is now firmware-complete and (reasonably) stable. it is being used at Lawrence Berkeley, Savannah River, Sandia, Los Alamos, Pacific Northwest, and Oak Ridge National Laboratories, and at UC Berkeley, West Point, Virginia Tech, and UC Davis. We've achieved this on the rough dollar equivalent of four-five weeks of RaptorX development.
+
+Requirements for program management: 
+\begin{itemize}
+\item Track existing users and support their work
+\item Develop a stable customer base, potentially overlapping RaptorX
+\item Set up the app/pluggable daughtercard library, Including an app library for specific kinds of on-board analytics, e.g., stochastic induction of FSM/Markov sequences of events, and including a data library (crossover with MINOS but not dependent) where analytics developers can grab documented datasets for algorithmic experiments
+\item Building and funding a continuous T\&E/QA capability
+\item As the user base grows, develop a control board and user group along the RaptorX model
+\item Maintain corporate policies, e.g., re distribution
+\end{itemize}
+
+
+Requirements for technical leadership:
+\begin{itemize}
+\item Understand the design, both technically and the motivations for the design choices
+\item Develop ?kits? for categories of daughtercard, e.g., chem-kit, rad-kit, nuke-kit (or more likely rad/nuke kit), bio-kit. \&c. These would be functional capabilities, pluggable, designed for modification
+\item Support specific contracts and developments
+\item Support proposal writing and cost estimation
+\item Test and stabilize the existing integration with RaptorX
+\item Continually upgrade the platform, e.g., replace the ARM7 with Qualcomm?s GPU chip
+\item Maintain the bug tracker and online documentation
+\item Develop interfaces (Rx, Web) for dynamical reconfiguration in the field, e.g., reporting policy, sensitivity, wake-up thresholds, comms frequency, \&c., according to task/mission need
+\end{itemize}
+
+\vspace{15pt}
+\begin{center}
+%\ding{118}
+\adforn{49}
+\end{center}
+\vspace{15pt}
+
+Whether this is a better fit with STL or RSL is your decision; I have no `brand' bias. I'd like to see ubiquitous, persistent CBRNE monitoring. Canary could be the platform to do it. It's up to us to see that through.
+
+\vspace{20 pt}
+
+---\textit{Hart Kornell}, 23 August 2017
+
+
+\end{document}
